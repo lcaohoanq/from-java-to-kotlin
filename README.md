@@ -941,6 +941,36 @@ public class User {
     }
 ```
 
+## Record 
+
+> Java
+
+```java
+public interface AuthPort {
+    record UserLoginDTO (
+        @JsonProperty("email") @Email(message = "Email is not valid") @NotBlank(message = "Email is required")
+        String email,
+
+        @JsonProperty("password") @NotBlank(message = "Password is required")
+        String password
+    ){}
+}
+```
+
+> Kotlin
+
+```kotlin
+interface AuthPort {
+    data class UserLoginDTO (
+        @JsonProperty("email") @Email(message = "Email is not valid") @NotBlank(message = "Email is required")
+        val email: String,
+
+        @JsonProperty("password") @NotBlank(message = "Password is required")
+        val password: String
+    )
+}
+```
+
 ---
 
 ### Important things to know in Kotlin
