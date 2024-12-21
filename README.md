@@ -20,6 +20,7 @@ You can connect with me on:
 ## Join **Outcome School** and get high paying tech job: [Outcome School](https://outcomeschool.com)
 
 ## Print to Console
+
 > Java
 
 ```java
@@ -35,7 +36,9 @@ println("Amit Shekhar")
 ```
 
 ---
+
 ## Constants and Variables
+
 > Java
 
 ```java
@@ -51,10 +54,14 @@ val name = "Amit Shekhar"
 ```
 
 ---
+
 ## Assigning the null value
+
 > Java
 
 ```java
+List<Student> students = null;
+
 String otherName;
 otherName = null;
 ```
@@ -62,12 +69,16 @@ otherName = null;
 > Kotlin
 
 ```kotlin
+var students : List<Student>? = null
+
 var otherName : String?
 otherName = null
 ```
 
 ---
+
 ## Verify if value is null
+
 > Java
 
 ```java
@@ -87,17 +98,32 @@ val length = text?.length
 ```
 
 ---
-## Verify if value is NotNull  OR NotEmpty
+
+## Verify if value is NotNull OR NotEmpty
+
 > Java
+
 ```java
 String sampleString = "Shekhar";
+
 if (!sampleString.isEmpty()) {
     myTextView.setText(sampleString);
 }
 if(sampleString!=null && !sampleString.isEmpty()){
-    myTextView.setText(sampleString); 
+    myTextView.setText(sampleString);
 }
 ```
+
+- Java 11 with `isBlank`: returns true if the string is empty or contains only white space codepoints.
+
+```java
+String sampleString = "Shekhar";
+
+if (!sampleString.isBlank()) {
+    myTextView.setText(sampleString);
+}
+```
+
 > Kotlin
 
 ```kotlin
@@ -106,17 +132,27 @@ if(sampleString.isNotEmpty()){  //the feature of kotlin extension function
     myTextView.text=sampleString
 }
 if(!sampleString.isNullOrEmpty()){
-   myTextView.text=sampleString 
+   myTextView.text=sampleString
 }
 ```
+
 ---
+
 ## Concatenation of strings
+
 > Java
 
 ```java
 String firstName = "Amit";
 String lastName = "Shekhar";
 String message = "My name is: " + firstName + " " + lastName;
+
+//Use string builder for better performance
+String message = new StringBuilder("My name is: ")
+    .append(firstName)
+    .append(" ")
+    .append(lastName)
+    .toString();
 ```
 
 > Kotlin
@@ -125,16 +161,36 @@ String message = "My name is: " + firstName + " " + lastName;
 var firstName = "Amit"
 var lastName = "Shekhar"
 var message = "My name is: $firstName $lastName"
+
+//Or Use string builder for better performance
+var message = StringBuilder("My name is: ")
+    .append(firstName)
+    .append(" ")
+    .append(lastName)
+    .toString()
 ```
 
 ---
+
 ## New line in string
+
 > Java
 
 ```java
 String text = "First Line\n" +
               "Second Line\n" +
               "Third Line";
+```
+
+- Java 13 with Text Blocks
+
+```java
+
+String text = """
+        First Line
+        Second Line
+        Third Line
+        """;
 ```
 
 > Kotlin
@@ -150,6 +206,7 @@ val text = """
 ---
 
 ## Substring
+
 > Java
 
 ```java
@@ -183,6 +240,7 @@ println("substring $substr")
 ---
 
 ## Ternary Operations
+
 > Java
 
 ```java
@@ -202,7 +260,9 @@ log(message ?: "")
 ```
 
 ---
+
 ## Bitwise Operators
+
 > Java
 
 ```java
@@ -226,7 +286,9 @@ val unsignedRightShift = a ushr 2
 ```
 
 ---
+
 ## Check the type and casting
+
 > Java
 
 ```java
@@ -247,7 +309,9 @@ var car = object as? Car // var car = object as Car?
 ```
 
 ---
+
 ## Check the type and casting (implicit)
+
 > Java
 
 ```java
@@ -270,7 +334,9 @@ if (object is Car?) {
 ```
 
 ---
+
 ## Multiple conditions
+
 > Java
 
 ```java
@@ -284,7 +350,9 @@ if (score in 0..300) { }
 ```
 
 ---
+
 ## Multiple Conditions (Switch case)
+
 > Java
 
 ```java
@@ -310,7 +378,7 @@ switch (score) {
     grade = "Fail";
     break;
   default:
-      grade = "Fail";       
+      grade = "Fail";
 }
 ```
 
@@ -327,7 +395,9 @@ var grade = when (score) {
 ```
 
 ---
+
 ## For-loops
+
 > Java
 
 ```java
@@ -365,7 +435,9 @@ for ((key, value) in map) { }
 ```
 
 ---
+
 ## Collections
+
 > Java
 
 ```java
@@ -394,7 +466,9 @@ val keyValue = mapOf(1 to "Amit",
 ```
 
 ---
+
 ## for each
+
 > Java
 
 ```java
@@ -434,7 +508,9 @@ cars.parallelStream().filter { it.speed > 100 }.forEach { println(it.speed)}
 ```
 
 ---
+
 ## Splitting arrays
+
 > java
 
 ```java
@@ -443,7 +519,6 @@ String param = splits[0];
 String value = splits[1];
 ```
 
-
 > kotlin
 
 ```kotlin
@@ -451,7 +526,9 @@ val (param, value) = "param=car".split("=")
 ```
 
 ---
+
 ## Defining methods
+
 > Java
 
 ```java
@@ -469,6 +546,7 @@ fun doSomething() {
 ```
 
 ### Default values for method parameters
+
 > Java
 
 ```java
@@ -493,7 +571,9 @@ calculateCost(10) // 205
 ```
 
 ---
+
 ## Variable number of arguments
+
 > Java
 
 ```java
@@ -511,7 +591,9 @@ fun doSomething(vararg numbers: Int) {
 ```
 
 ---
+
 ## Defining methods with return
+
 > Java
 
 ```java
@@ -539,7 +621,9 @@ fun getScore() = score // return-type is Int
 ```
 
 ---
+
 ## Returning result of an operation
+
 > Java
 
 ```java
@@ -566,7 +650,9 @@ fun getScore(value: Int) = 2 * value // return-type is int
 ```
 
 ---
+
 ## Constructors
+
 > Java
 
 ```java
@@ -609,7 +695,9 @@ object Utils {
 ```
 
 ---
+
 ## Getters and Setters
+
 > Java
 
 ```java
@@ -668,6 +756,19 @@ public class Developer {
 }
 ```
 
+- With Lombok annotation
+
+```java
+@Data
+@AllArgsConstructor
+@EqualsAndHashCode
+@ToString
+public class Developer {
+    private String name;
+    private int age;
+}
+```
+
 > Kotlin
 
 ```kotlin
@@ -676,7 +777,91 @@ data class Developer(var name: String, var age: Int)
 ```
 
 ---
+
+## Abstract class
+
+> Java
+
+```java
+@Data
+@AllArgsConstructor
+public abstract class Animal {
+    private String name;
+    public abstract void makeSound();
+}
+
+```
+
+> Kotlin
+
+```kotlin
+
+abstract class Animal(var name: String) {
+
+    abstract fun makeSound()
+
+}
+
+```
+
+---
+
+## Inheritance (from abstract class)
+
+> Java
+
+```java
+@Data
+@AllArgsConstructor
+public abstract class Animal {
+    protected String name;
+    public abstract void makeSound();
+}
+
+public class Dog extends Animal {
+
+    public Dog(String name) {
+        super(name);
+    }
+
+    @Override
+    public void makeSound() {
+        System.out.println("Bark");
+    }
+}
+
+// Avoid to override the method
+public abstract class Fish extends Animal{
+    private int weight;
+}
+
+```
+
+> Kotlin
+
+```kotlin
+abstract class Animal(protected var name: String) {
+
+    abstract fun makeSound()
+
+}
+
+class Dog(name: String) : Animal(name) {
+
+    override fun makeSound() {
+        println("Bark")
+    }
+
+}
+
+// Avoid to override the method
+abstract class Fish(name: String, var weight: Int) : Animal(name)
+```
+
+---
+
 ## Cloning or copying
+
 > Java
 
 ```java
@@ -720,7 +905,9 @@ val dev2 = dev.copy(age = 25)
 ```
 
 ---
+
 ## Generics
+
 > Java
 
 ```java
@@ -777,7 +964,9 @@ class SomeClass: SomeInterface<List<String>> {
 ```
 
 ---
+
 ## Extension function
+
 > Java
 
 ```java
@@ -808,7 +997,9 @@ var result = 3.triple()
 ```
 
 ---
+
 ## Defining uninitialized objects
+
 > Java
 
 ```java
@@ -820,28 +1011,47 @@ Person person;
 ```kotlin
 internal lateinit var person: Person
 ```
+
 ---
+
 ## enum
+
 > Java
 
 ```java
 public enum Direction {
-        NORTH(1),
-        SOUTH(2),
-        WEST(3),
-        EAST(4);
+    NORTH(1),
+    SOUTH(2),
+    WEST(3),
+    EAST(4);
 
-        int direction;
+    int direction;
 
-        Direction(int direction) {
-            this.direction = direction;
-        }
-
-        public int getDirection() {
-            return direction;
-        }
+    Direction(int direction) {
+        this.direction = direction;
     }
+
+    public int getDirection() {
+        return direction;
+    }
+}
 ```
+
+- With Lombok annotation
+
+```java
+@Getter
+@AllArgsConstructor
+public enum Direction {
+    NORTH(1),
+    SOUTH(2),
+    WEST(3),
+    EAST(4);
+
+    private final int direction;
+}
+```
+
 > Kotlin
 
 ```kotlin
@@ -852,10 +1062,11 @@ enum class Direction(val direction: Int) {
     EAST(4);
 }
 ```
+
 ---
 
-
 ## Sorting List
+
 > Java
 
 ```java
@@ -881,9 +1092,11 @@ profile.sortedWith(Comparator({ profile1, profile2 ->
     return@Comparator 0
 }))
 ```
+
 ---
 
 ## Anonymous Class
+
 > Java
 
 ```java
@@ -918,8 +1131,11 @@ val task = object : AsyncTask<Void, Void, Profile>() {
     }
 }
 ```
+
 ---
+
 ## Initialization block
+
 > Java
 
 ```java
@@ -934,14 +1150,14 @@ public class User {
 > Kotlin
 
 ```kotlin
-   class User {
-        init { // Initialization block
-            println("Init block")
-        }
+class User {
+    init { // Initialization block
+        println("Init block")
     }
+}
 ```
 
-## Record 
+## Record
 
 > Java
 
@@ -1008,9 +1224,11 @@ interface AuthPort {
 ## Join **Outcome School** and get high paying tech job: [Outcome School](https://outcomeschool.com)
 
 ### Found this project useful :heart:
-* Support by clicking the :star: button on the upper right of this page. :v:
+
+- Support by clicking the :star: button on the upper right of this page. :v:
 
 ### License
+
 ```
    Copyright (C) 2024 Amit Shekhar
 
@@ -1028,4 +1246,5 @@ interface AuthPort {
 ```
 
 ### Contributing to From Java To Kotlin
+
 Just make a pull request. You are in!
